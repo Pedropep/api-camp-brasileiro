@@ -1,4 +1,7 @@
-INSERT INTO `brasileirao`(`COL 1`, `COL 2`, `COL 3`, `COL 4`, `COL 5`, `COL 6`, `COL 7`, `COL 8`, `COL 9`, `COL 10`, `COL 11`, `COL 12`, `COL 13`, `COL 14`, `COL 15`) VALUES (1, '15/04/2023', '16:01', 'Palmeiras', 'Cuiaba', '4-2-3-1', '4-2-3-1', 'A. Moreira Ferreira', 'I. Abreu Vieira', 'Palmeiras', 'Allianz Parque', 2, 1, 'SP', 'MT'),
+INSERT INTO `brasileiro`
+(`rodada`, `data`, `hora`, `mandante`, `visitante`, `formacao_mandate`, `formacao_visitante`, `tecnico_mandante`,`tecnico_visitante`, `vencedor`, `estadio`, `placar_mandante`, `placar_visitante`, `estado_mandante`, `estado_visitante`) 
+VALUES 
+ (1, '15/04/2023', '16:01', 'Palmeiras', 'Cuiaba', '4-2-3-1', '4-2-3-1', 'A. Moreira Ferreira', 'I. Abreu Vieira', 'Palmeiras', 'Allianz Parque', 2, 1, 'SP', 'MT'),
  (1, '15/04/2023', '16:02', 'America-MG', 'Fluminense', '4-2-3-1', '4-2-2-2', 'V. Carmo Mancini', 'F. Diniz Silva', 'Fluminense', 'Estádio Raimundo Sampaio', 0, 3, 'MG', 'RJ'),
  (1, '15/04/2023', '18:31', 'Bragantino', 'Bahia', '4-2-3-1', '3-4-3', 'P. Faria Caixinha', 'R. Alves Paiva', 'Bragantino', 'Nabizão', 2, 1, 'SP', 'BA'),
  (1, '15/04/2023', '18:31', 'Athletico-PR', 'Goias', '4-2-3-1', '4-2-3-1', 'P. Turra', 'E. Rodrigues de Ávila', 'Athletico-PR', 'Ligga Arena', 2, 0, 'PR', 'GO'),
@@ -377,4 +380,4 @@ INSERT INTO `brasileirao`(`COL 1`, `COL 2`, `COL 3`, `COL 4`, `COL 5`, `COL 6`, 
  (38, '06/12/2023', '21:32', 'Cuiaba', 'Athletico-PR', '5-3-2', '3-4-3', 'A. Cardoso de Oliveira', 'W. Carvalho', 'Cuiaba', 'Arena Pantanal', 3, 0, 'MT', 'PR'),
  (38, '06/12/2023', '21:32', 'Santos', 'Fortaleza', '3-4-1-2', '4-2-3-1', 'M. Fernandes', 'J. Vojvoda', 'Fortaleza', 'Estádio Urbano Caldeira', 1, 2, 'SP', 'CE'),
  (38, '06/12/2023', '21:32', 'Sao Paulo', 'Flamengo', '4-2-3-1', '4-2-3-1', 'D. Silvestre Júnior', 'A. Bacchi', 'Sao Paulo', ' Morumbi', 1, 0, 'SP', 'RJ'),
- (38, '06/12/2023', '21:32', 'Vasco', 'Bragantino', '4-4-2', '4-3-3', 'R. Díaz', 'P. Faria Caixinha', 'Vasco', 'Estádio São Januário', 2, 1, 'RJ', 'SP');;
+ (38, '06/12/2023', '21:32', 'Vasco', 'Bragantino', '4-4-2', '4-3-3', 'R. Díaz', 'P. Faria Caixinha', 'Vasco', 'Estádio São Januário', 2, 1, 'RJ', 'SP');
