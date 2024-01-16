@@ -1,0 +1,10 @@
+.bg-fundo {
+    background-color: #387c2b ;    
+}
+
+.container-fluid{
+    height:70px;
+    margin-left: 20px;
+    margin-right: 15px;
+    padding: 0;
+}

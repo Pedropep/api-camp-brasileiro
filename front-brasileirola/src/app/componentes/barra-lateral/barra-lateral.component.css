@@ -1,0 +1,9 @@
+.t-nav {
+    background-color: #387c2b ;    
+    width:150px;
+    height: 1200px;
+}
+
+.aria-selected{
+    background-color: red;
+}
