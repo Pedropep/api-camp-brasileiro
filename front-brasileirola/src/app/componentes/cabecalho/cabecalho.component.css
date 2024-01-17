@@ -1,5 +1,7 @@
 .bg-fundo {
-    background-color: #387c2b ;    
+    /* background-color: #387c2b ;     */
+    background: rgb(56,124,43);
+    background: linear-gradient(90deg, rgba(56,124,43,1) 62%, rgba(253,187,45,1) 100%);
 }
 
 .container-fluid{

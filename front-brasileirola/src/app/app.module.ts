@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component';
 import { BarraLateralComponent } from './componentes/barra-lateral/barra-lateral.component';
+import { DashboardComponent } from './componentes/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CabecalhoComponent,
-    BarraLateralComponent
+    BarraLateralComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
