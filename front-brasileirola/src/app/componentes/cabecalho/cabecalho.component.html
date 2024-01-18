@@ -1,14 +1,30 @@
-<nav class="navbar bg-fundo">
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-fundo">
     <div class="container-fluid">
-        <a class="navbar-brand " href="#">
-            <img src="../../../assets/img/6.png" alt="Logo" width="70" height="70" class="img-fluid">
-        </a>
-
+      <a class="navbar-brand" href="#"> <img src="../../../assets/img/6.png" alt="Logo" width="70" height="70" class="img-fluid"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-20 ">
+          <li class="nav-item">
+            <a class="nav-link active text-light" aria-current="page" href="#"><fa-icon [icon]="['fas', 'futbol']"></fa-icon> Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#"><fa-icon [icon]="['fas','coffee']"></fa-icon> Classificação</a>
+          </li>          
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#"><fa-icon [icon]="['fas','chess-rook']"></fa-icon> Estrategia</a>
+          </li>          
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#"> <fa-icon [icon]="['fas','chart-pie']"></fa-icon> Estatisticas</a>
+          </li>          
+        
+        </ul>
         <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-success" type="submit">Search</button>
-          </form>
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
     </div>
-</nav>
-  
+  </nav>
   
