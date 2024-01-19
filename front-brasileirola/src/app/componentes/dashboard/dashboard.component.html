@@ -4,7 +4,7 @@
       <div class="card text-center">
         <div class="card-header d-flex justify-content-center titulo-card">
           <div class="col-md-7">
-            <select [(ngModel)]="num_rodada" (change)="getByRodada(num_rodada)"  class="form-select text-center" aria-label="Default select example">
+            <select [(ngModel)]="num_rodada" name="numRodada" (change)="getByRodada(num_rodada)"  class="form-select text-center" aria-label="Default select example">
               <option >Selecione a Rodada</option>
               <option value="1">Rodada 1</option>
               <option value="2">Rodada 2</option>
@@ -47,11 +47,10 @@
             </select>
           </div>
         </div>
-        <div class="card-body">
+        <div class="card-body overflow-scroll" style="height: 450px;">
           <div class="card mb-2" *ngFor="let rodada of lista_rodadas">
-            <div class="card-body btn">
-
-              <div class="row d-flex justify-content-center">
+            <div class="card-body" (click)="findByIdPartida(rodada.id)">
+              <div class="row btn d-flex justify-content-center" >
                 <div class="col-md-4"><img src="../../../assets/img/{{rodada.mandante}}.svg" class="rounded escudo-peqno mx-auto d-block" alt="..."></div>
                 <div class="col-md-2"></div>
                 <div class="col-md-4"><img src="../../../assets/img/{{rodada.visitante}}.svg" class="rounded escudo-peqno mx-auto d-block" alt="..."></div>
@@ -74,7 +73,7 @@
                 </div>
               </div>
               <div class="row d-flex justify-content-center mt-2 text-center">
-                <div class="col-md-7">
+                <div class="col-md-7" >
                   {{rodada.id}}
                 </div>
               </div>
@@ -89,26 +88,26 @@
     <div class="col-md-7">
       <div class="card text-center">
         <div class="card-header titulo-card">
-          Campeonato Brasileiro 2023 - Rodada
+          Campeonato Brasileiro 2023 - Rodada {{partida.rodada}}
         </div>
         <div class="card-body">
           <div class="row d-flex justify-content-center">
             <div class="col-md-5">
-              <img src="../../../assets/img/Corinthians.svg" class="rounded escudo mx-auto d-block" alt="...">
+              <img src="../../../assets/img/{{partida.mandante}}.svg" class="rounded escudo mx-auto d-block" alt="...">
             </div>
             <div class="col-md-5">
-              <img src="../../../assets/img/Sao Paulo.svg" class="rounded escudo mx-auto d-block" alt="...">
+              <img src="../../../assets/img/{{partida.visitante}}.svg" class="rounded escudo mx-auto d-block" alt="...">
             </div>
           </div>
           <div class="row d-flex justify-content-center text-center mt-3">
             <div class="col-md-4 ">
-              SC Corinthians Paulista
+              {{partida.mandante}}
             </div>
             <div class="col-md-1">
               X
             </div>
             <div class="col-md-4">
-              São Paulo FC
+              {{partida.visitante}}
             </div>
           </div>
           <div class="row d-flex justify-content-center mt-3">
@@ -132,19 +131,19 @@
               <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
                 tabindex="0">
                 <div class="row d-flex justify-content-center text-center mt-3">
-                  <div class="col-md-4  fs-16">5</div>
+                  <div class="col-md-4  fs-16">{{partida.placar_mandante}}</div>
                   <div class="col-md-1">|</div>
-                  <div class="col-md-4  fs-16">4</div>
+                  <div class="col-md-4  fs-16">{{partida.placar_visitante}}</div>
                 </div>
                 <div class="row d-flex justify-content-center text-center mt-3">
-                  <div class="col-md-4">Tecnico Mandante</div>
+                  <div class="col-md-4">{{partida.tecnico_mandante}}</div>
                   <div class="col-md-1">|</div>
-                  <div class="col-md-4">Tecnico Visitante</div>
+                  <div class="col-md-4">{{partida.tecnico_visitante}}</div>
                 </div>
                 <div class="row d-flex justify-content-center text-center mt-3">
-                  <div class="col-md-4">4-4-3</div>
+                  <div class="col-md-4">{{partida.formacao_mandate}}</div>
                   <div class="col-md-1">|</div>
-                  <div class="col-md-4">5-4-2</div>
+                  <div class="col-md-4">{{partida.formacao_visitante}}</div>
                 </div>
               </div>
               <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
@@ -157,7 +156,7 @@
           </div>
         </div>
         <div class="card-footer text-body-secondary">
-          16:30 - 24/01/2023 - Estadio Municipal de Guarulhos
+          {{partida.hora}} - {{partida.data}} - {{partida.estadio}}
         </div>
       </div>
     </div>

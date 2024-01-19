@@ -10,8 +10,7 @@ import { BrasileiroService } from 'src/app/service/brasileiro.service';
 })
 export class DashboardComponent implements OnInit{
   
-  partida : Brasileiro = new Brasileiro()
-  lista_all: Brasileiro[]
+  partida : Brasileiro = new Brasileiro()  
   lista_rodadas: Brasileiro[]
   num_rodada: string
   id_partida: number
@@ -24,14 +23,11 @@ export class DashboardComponent implements OnInit{
   ngOnInit(): void {
     if(this.num_rodada == null){
       this.getByRodada('38')
-    }    
-    this.getAll()    
-  }
-
-  getAll(){
-    this.service.getAll().subscribe((resp: Brasileiro[]) => {
-      this.lista_all = resp
-    })
+    }
+    if(this.partida.id == null){
+      this.findByIdPartida(371)
+    }     
+     
   }
 
   getByRodada(rodada: string) {
@@ -42,7 +38,7 @@ export class DashboardComponent implements OnInit{
 
   findByIdPartida(id:number){    
     this.service.getByIdPartida(id).subscribe((resp: Brasileiro)=>{
-      this.partida = resp      
+      this.partida = resp         
     })
   }
 

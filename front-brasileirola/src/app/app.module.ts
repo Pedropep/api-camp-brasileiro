@@ -9,13 +9,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component';
 import { BarraLateralComponent } from './componentes/barra-lateral/barra-lateral.component';
 import { DashboardComponent } from './componentes/dashboard/dashboard.component';
+import { ClassificacaoComponent } from './componentes/classificacao/classificacao.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CabecalhoComponent,
     BarraLateralComponent,
-    DashboardComponent
+    DashboardComponent,
+    ClassificacaoComponent
   ],
   imports: [
     BrowserModule,
