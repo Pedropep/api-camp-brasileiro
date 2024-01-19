@@ -9,7 +9,15 @@ import { Observable } from 'rxjs';
 export class BrasileiroService {
   constructor( private http: HttpClient) { }
   
+  getAll():Observable<Brasileiro[]>{
+    return this.http.get<Brasileiro[]>('http://localhost:8080/partidas')
+  }
+
   getByRodada(rodada: string): Observable<Brasileiro[]>{
     return this.http.get<Brasileiro[]>(`http://localhost:8080/partidas/rodada/${rodada}`)
+  }
+
+  getByIdPartida(id:number): Observable<Brasileiro>{
+    return this.http.get<Brasileiro>(`http://localhost:8080/partidas/${id}`)
   }
 }

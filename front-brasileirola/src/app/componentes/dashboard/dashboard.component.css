@@ -12,3 +12,12 @@ button.nav-link {
     text-decoration: none;   
     color: #000000;    
 }
+
+.titulo-card{
+    height: 60px;
+}
+
+.escudo-peqno{
+    width: 60px;
+    height: 60px;
+}

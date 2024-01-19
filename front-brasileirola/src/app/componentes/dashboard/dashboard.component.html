@@ -1,38 +1,84 @@
 <div class="container-fluid mt-4">
-  <div class="row">
+  <div class="row d-flex justify-content-center">
     <div class="col-md-4">
       <div class="card text-center">
-        <div class="card-header d-flex justify-content-center">
+        <div class="card-header d-flex justify-content-center titulo-card">
           <div class="col-md-7">
-          <select class="form-select text-center" aria-label="Default select example">
-            <option selected>Selecione a Rodada</option>
-            <option value="1">Rodada 01</option>
-            <option value="2">Rodada 02</option>
-            <option value="3">Rodada 03</option>            
-          </select>
-        </div>
+            <select [(ngModel)]="num_rodada" (change)="getByRodada(num_rodada)"  class="form-select text-center" aria-label="Default select example">
+              <option >Selecione a Rodada</option>
+              <option value="1">Rodada 1</option>
+              <option value="2">Rodada 2</option>
+              <option value="3">Rodada 3</option>
+              <option value="4">Rodada 4</option>
+              <option value="5">Rodada 5</option>
+              <option value="6">Rodada 6</option>
+              <option value="7">Rodada 7</option>
+              <option value="8">Rodada 8</option>
+              <option value="9">Rodada 9</option>
+              <option value="10">Rodada 10</option>
+              <option value="11">Rodada 11</option>
+              <option value="12">Rodada 12</option>
+              <option value="13">Rodada 13</option>
+              <option value="14">Rodada 14</option>
+              <option value="15">Rodada 15</option>
+              <option value="16">Rodada 16</option>
+              <option value="17">Rodada 17</option>
+              <option value="18">Rodada 18</option>
+              <option value="19">Rodada 19</option>
+              <option value="20">Rodada 20</option>
+              <option value="21">Rodada 21</option>
+              <option value="22">Rodada 22</option>
+              <option value="23">Rodada 23</option>
+              <option value="24">Rodada 24</option>
+              <option value="25">Rodada 25</option>
+              <option value="26">Rodada 26</option>
+              <option value="27">Rodada 27</option>
+              <option value="28">Rodada 28</option>
+              <option value="29">Rodada 29</option>
+              <option value="30">Rodada 30</option>
+              <option value="31">Rodada 31</option>
+              <option value="32">Rodada 32</option>
+              <option value="33">Rodada 33</option>
+              <option value="34">Rodada 34</option>
+              <option value="35">Rodada 35</option>
+              <option value="36">Rodada 36</option>
+              <option value="37">Rodada 37</option>
+              <option selected value="38">Rodada 38</option>
+            </select>
+          </div>
         </div>
         <div class="card-body">
-          <div class="card" >
-            <div class="card-body">
+          <div class="card mb-2" *ngFor="let rodada of lista_rodadas">
+            <div class="card-body btn">
 
               <div class="row d-flex justify-content-center">
-                <div class="col-md-4">time A</div>             
-                <div class="col-md-2">x</div>             
-                <div class="col-md-4">time B</div> 
+                <div class="col-md-4"><img src="../../../assets/img/{{rodada.mandante}}.svg" class="rounded escudo-peqno mx-auto d-block" alt="..."></div>
+                <div class="col-md-2"></div>
+                <div class="col-md-4"><img src="../../../assets/img/{{rodada.visitante}}.svg" class="rounded escudo-peqno mx-auto d-block" alt="..."></div>
+
+              </div>
+              <div class="row d-flex justify-content-center mt-2">
+                <div class="col-md-4">{{rodada.mandante}}</div>
+                <div class="col-md-2">x</div>
+                <div class="col-md-4">{{rodada.visitante}}</div>
               </div>
 
               <div class="row d-flex justify-content-center mt-3 text-center">
                 <div class="col-md-7">
-                  16:30 - 24/10/1996 
-                </div>                
-              </div>            
+                 {{rodada.hora}} - {{rodada.data}}
+                </div>
+              </div>
               <div class="row d-flex justify-content-center mt-2 text-center">
                 <div class="col-md-7">
-                  Estadio Municipal de Guarulhos
-                </div>                
+                  {{rodada.estadio}}
+                </div>
               </div>
-          </div>
+              <div class="row d-flex justify-content-center mt-2 text-center">
+                <div class="col-md-7">
+                  {{rodada.id}}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="card-footer text-body-secondary">
@@ -40,18 +86,18 @@
         </div>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-7">
       <div class="card text-center">
-        <div class="card-header">
-          Campeonato Brasileiro 2023 - Rodada  
+        <div class="card-header titulo-card">
+          Campeonato Brasileiro 2023 - Rodada
         </div>
         <div class="card-body">
           <div class="row d-flex justify-content-center">
             <div class="col-md-5">
-              <img src="../../../assets/img/corinthians.svg" class="rounded escudo mx-auto d-block" alt="...">
+              <img src="../../../assets/img/Corinthians.svg" class="rounded escudo mx-auto d-block" alt="...">
             </div>
             <div class="col-md-5">
-              <img src="../../../assets/img/sao-paulo-1.svg" class="rounded escudo mx-auto d-block" alt="...">
+              <img src="../../../assets/img/Sao Paulo.svg" class="rounded escudo mx-auto d-block" alt="...">
             </div>
           </div>
           <div class="row d-flex justify-content-center text-center mt-3">
@@ -67,19 +113,24 @@
           </div>
           <div class="row d-flex justify-content-center mt-3">
             <div class="col-md-3"></div>
-            <div class="col-md-6">           
+            <div class="col-md-6">
               <nav class="">
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                  <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Geral</button>
-                  <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Classificação</button>
-                  <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" disabled>Ultimos Jogos</button>                  
+                  <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                    type="button" role="tab" aria-controls="nav-home" aria-selected="true">Geral</button>
+                  <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                    type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Classificação</button>
+                  <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact"
+                    type="button" role="tab" aria-controls="nav-contact" aria-selected="false" disabled>Ultimos
+                    Jogos</button>
                 </div>
               </nav>
             </div>
             <div class="col-md-2"></div>
 
             <div class="tab-content mt-3" id="nav-tabContent">
-              <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+              <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
+                tabindex="0">
                 <div class="row d-flex justify-content-center text-center mt-3">
                   <div class="col-md-4  fs-16">5</div>
                   <div class="col-md-1">|</div>
@@ -96,9 +147,12 @@
                   <div class="col-md-4">5-4-2</div>
                 </div>
               </div>
-              <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">...</div>
-              <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">...</div>
-              <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">...</div>
+              <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
+                tabindex="0">...</div>
+              <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"
+                tabindex="0">...</div>
+              <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab"
+                tabindex="0">...</div>
             </div>
           </div>
         </div>
