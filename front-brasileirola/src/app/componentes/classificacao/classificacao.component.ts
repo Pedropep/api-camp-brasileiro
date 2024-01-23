@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { find } from 'rxjs';
 import { Brasileiro } from 'src/app/model/Brasileiro';
 import { Clube } from 'src/app/model/Clube';
 import { TabelaClass } from 'src/app/model/TabelaClass';
@@ -21,7 +20,7 @@ export class ClassificacaoComponent implements OnInit{
   lista_clube: Clube[] = []
   listaClass : TabelaClass[] = []
 
-  time : string
+  num_rodada = 0  
   vitorias:number = 0
   pontos:number = 0
   derrotas = 0
@@ -64,7 +63,6 @@ export class ClassificacaoComponent implements OnInit{
     });
   }
 
-
   //ADICIONA TODAS AS PARTIDAS DE UM CLUBE NA LISTA DE CLUBES
   montaPartidasClube(){    
 
@@ -104,20 +102,20 @@ export class ClassificacaoComponent implements OnInit{
         
         for (let index = rodadas ; index < lista_time.length;  index++) {
 
-          lista_time = lista_time.sort((a,b) => (a.id > b.id) ? -1 : 1)          
+          lista_time = lista_time.sort((a,b) => a.id - b.id)          
           let element = lista_time[index];
-                    
+
           if(element.vencedor == time.nome){
             this.vitorias = this.vitorias + 1
             this.pontos = this.pontos + 3
-            tempo = tempo + 1
+            tempo++
           }else if(element.vencedor == "-"){
             this.empates = this.empates + 1
             this.pontos = this.pontos + 1
-            tempo = tempo + 1
+            tempo++
           }else{
             this.derrotas = this.derrotas + 1
-            tempo = tempo + 1
+            tempo++
           }          
           
           this.classsifica.clube = time.nome
@@ -137,6 +135,6 @@ export class ClassificacaoComponent implements OnInit{
         tempo = 0          
       }      
     });
-    console.log(this.listaClass) 
+    this.listaClass = this.listaClass.sort((a,b) => b.pontos - a.pontos)    
   }
 }
