@@ -20,11 +20,11 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
+                          <tr *ngFor="let rodada of lista_clube">
                             <th scope="row">1</th>
-                            <!-- <td>{{clube.nome}}</td>
-                            <td>{{clube.pontos}}</td>
-                            <td>{{clube.qtdVitorias}}</td> -->
+                            <td>{{rodada.nome}}</td>
+                            <td>{{classsifica.pontos}}</td>
+                            <td>{{classsifica.vitorias}}</td>
                             <td>18</td>
                             <td>15</td>
                             <td>55</td>
