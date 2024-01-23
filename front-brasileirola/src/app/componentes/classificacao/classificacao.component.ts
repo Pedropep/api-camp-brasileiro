@@ -100,15 +100,14 @@ export class ClassificacaoComponent implements OnInit{
     this.lista_clube.forEach(time => {      
       let lista_time = time.partidas      
       
-      if(time.nome == "Palmeiras"){     
+      if(time.nome == time.nome){     
         
         for (let index = rodadas ; index < lista_time.length;  index++) {
 
           lista_time = lista_time.sort((a,b) => (a.id > b.id) ? -1 : 1)          
-          let element = lista_time[index];    
-
-          
-          if(element.vencedor == "Palmeiras"){
+          let element = lista_time[index];
+                    
+          if(element.vencedor == time.nome){
             this.vitorias = this.vitorias + 1
             this.pontos = this.pontos + 3
             tempo = tempo + 1
@@ -130,11 +129,14 @@ export class ClassificacaoComponent implements OnInit{
 
           this.classsifica = new TabelaClass()
           this.listaClass.push(this.classsifica)
-
-        }
-        console.log(this.listaClass)
-        // console.log(time.nome + " Pontos = " + this.pontos + " vitorias = " + this.vitorias + " Emapts = " + this.empates + " Derrotas = " + this.derrotas + " ")
-      }
+        }               
+        this.pontos = 0
+        this.derrotas = 0
+        this.empates = 0
+        this.vitorias = 0
+        tempo = 0          
+      }      
     });
+    console.log(this.listaClass) 
   }
 }

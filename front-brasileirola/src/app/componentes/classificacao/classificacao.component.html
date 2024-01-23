@@ -15,19 +15,18 @@
                             <th scope="col">PTS</th>
                             <th scope="col">VIT</th>
                             <th scope="col">DER</th>
-                            <th scope="col">GC</th>
-                            <th scope="col">SG</th>
+                            <th scope="col">EMP</th>
+                            
                           </tr>
                         </thead>
-                        <tbody>
-                          <tr *ngFor="let rodada of lista_clube">
-                            <th scope="row">1</th>
-                            <td>{{rodada.nome}}</td>
-                            <td>{{classsifica.pontos}}</td>
-                            <td>{{classsifica.vitorias}}</td>
-                            <td>18</td>
-                            <td>15</td>
-                            <td>55</td>
+                        <tbody *ngFor="let rodada of listaClass " >
+                          <tr *ngIf="rodada.rodada == 38">                                                                                                               
+                            <th  scope="row">1</th>
+                            <td>{{rodada.clube}}</td>
+                            <td>{{rodada.pontos}}</td>
+                            <td>{{rodada.vitorias}}</td>
+                            <td>{{rodada.derrotas}}</td>
+                            <td>{{rodada.empates}}</td>                            
                           </tr>                        
                         </tbody>
                       </table>           
